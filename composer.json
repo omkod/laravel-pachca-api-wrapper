@@ -1,0 +1,27 @@
+{
+    "name": "omcod/laravel-pachca-api-wrapper",
+    "description": "wrapper api pachca.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Omcod\\LaravelPachcaApiWrapper\\": "src/",
+            "Omcod\\LaravelPachcaApiWrapper\\Classes\\": "src/Classes",
+            "Omcod\\LaravelPachcaApiWrapper\\Providers\\": "src/Providers"
+        }
+    },
+    "authors": [
+        {
+            "name": "Valentin",
+            "email": "harkov@omcod.ru"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Omcod\\LaravelPachcaApiWrapper\\Providers\\PachcaServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

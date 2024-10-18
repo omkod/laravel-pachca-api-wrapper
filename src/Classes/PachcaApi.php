@@ -20,11 +20,15 @@ class PachcaApi
     public function requestApiPachca(
         string $method = 'GET',
         string $endpoint = '',
-        array $jsonParameters = []
+        array $jsonParameters = [],
+        string $apiBaseUrl = null
     ): mixed {
         $defaultHeaders = ['Authorization' => $this->config['bearer_token']];
         // Create url.
-        $url     = self::API_URL_V1 . $endpoint;
+        $url = self::API_URL_V1 . $endpoint;
+        if ($apiBaseUrl) {
+            $url = $apiBaseUrl . $endpoint;
+        }
         $request = Http::withHeaders($defaultHeaders);
         // Set method request.
         switch ($method) {
@@ -52,7 +56,7 @@ class PachcaApi
     {
         $jsonParameters = [
             'chat' => [
-                "name"    => $nameChat
+                "name" => $nameChat
             ]
         ];
 
